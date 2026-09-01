@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.employeefullstack.dto.EmployeeDto;
 import com.employeefullstack.entity.Employee;
+import com.employeefullstack.exception.ResourceNotFoundException;
 import com.employeefullstack.mapper.EmployeeMapper;
 import com.employeefullstack.repositiory.EmployeeRepository;
 
@@ -24,8 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 	@Override
 	public EmployeeDto getEmployeeById(Long id) {
-		// TODO Auto-generated method stub
-		Employee employee = employeeRepository.findById(id).orElse(null);
+		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee Is Not exist with given id"+id));
 		return EmployeeMapper.mapToEmployeeDto(employee);
 	}
 	
