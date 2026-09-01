@@ -1,5 +1,7 @@
 package com.employeefullstack.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,4 +42,17 @@ public class EmployeeController {
 		return new ResponseEntity<>(employeeDto, HttpStatus.OK);
 	}
 
+	@GetMapping("/getAll")
+	public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
+
+		List<EmployeeDto> employees = employeeService.getAllEmployees();
+
+		return new ResponseEntity<>(employees, HttpStatus.OK);
+	}
+	
+	
+	
+	
+	
+	
 }

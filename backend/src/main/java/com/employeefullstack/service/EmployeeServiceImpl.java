@@ -1,5 +1,7 @@
 package com.employeefullstack.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.employeefullstack.dto.EmployeeDto;
@@ -28,6 +30,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee Is Not exist with given id"+id));
 		return EmployeeMapper.mapToEmployeeDto(employee);
 	}
+	@Override
+	public List<EmployeeDto> getAllEmployees() {
+		List<Employee> employees = employeeRepository.findAll();
+		return employees.stream().map((employee) -> EmployeeMapper.mapToEmployeeDto(employee)).collect(java.util.stream.Collectors.toList());
+		
+	}
+	
 	
 
 }
