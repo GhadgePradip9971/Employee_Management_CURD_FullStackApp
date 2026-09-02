@@ -66,7 +66,7 @@ public class EmployeeController {
 
 		employeeService.deleteEmployee(id);
 
-		return new ResponseEntity<>("Employee deleted successfully", HttpStatus.OK);
+		return new ResponseEntity<>("Employee deleted successfully ", HttpStatus.OK);
 	}
 	
 	
