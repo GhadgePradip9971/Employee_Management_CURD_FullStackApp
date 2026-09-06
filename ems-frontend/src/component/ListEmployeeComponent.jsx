@@ -16,10 +16,11 @@ listEmployees().then((response)=>{
     return(
         <div className='container'>
             
-       <h2>List of Employee</h2>     
+    <figure class="text-center">  <h2>List of Employee</h2>  </figure> 
           <table className='table table-striped table-bordered'>
             <thead>
                 <tr>
+                <th>Employee ID</th>
                 <th>Employee First Name</th>
                 <th>Employee LastName</th>
                 <th>Employee Email</th></tr>

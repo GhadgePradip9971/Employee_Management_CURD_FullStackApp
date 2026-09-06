@@ -2,7 +2,7 @@ import './App.css'
 import FooterComponent from './component/FooterComponent'
 import HeaderComponent from './component/HeaderComponent'
 import ListEmployeeComponent from './component/ListEmployeeComponent'
-import{BrowserRouter} from 'React-Router-Dom'
+import{ BrowserRouter ,Routes ,Route} from 'React-Router-Dom'
 import React from 'react'
 function App(){
   return(
@@ -11,7 +11,7 @@ function App(){
     <HeaderComponent/>
   <Routes>
     <Route path='/' element={<ListEmployeeComponent/>}></Route>
-
+<Route path="/employees" element={<ListEmployeeComponent/>}></Route>
   </Routes>
 
 
