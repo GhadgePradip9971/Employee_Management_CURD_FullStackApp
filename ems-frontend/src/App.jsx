@@ -2,14 +2,25 @@ import './App.css'
 import FooterComponent from './component/FooterComponent'
 import HeaderComponent from './component/HeaderComponent'
 import ListEmployeeComponent from './component/ListEmployeeComponent'
-
+import{BrowserRouter} from 'React-Router-Dom'
+import React from 'react'
 function App(){
   return(
     <div>
+      <BrowserRouter>
     <HeaderComponent/>
-   <ListEmployeeComponent/>
+  <Routes>
+    <Route path='/' element={<ListEmployeeComponent/>}></Route>
+
+  </Routes>
+
+
    <FooterComponent/>
+    
+    
+   </BrowserRouter>
     </div>
+    
   )
 }
 export default App 
