@@ -1,10 +1,10 @@
 import ListEmployeeComponent from "../../../ems-frontend/src/components/ListEmployeeComponent"
-import "./App.css"
+import '../../ems-frontend/src/app.css'
 
 function App(){
   return(
     <div>
-    <ListEmployeeComponent/>
+   <ListEmployeeComponent/>
     </div>
   )
 }
