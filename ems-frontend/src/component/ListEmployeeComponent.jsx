@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import {listEmployees} from'../../src/services/EmployeeService'
+import {listEmployees} from '../services/EmployeeService'
 const ListEmployeeComponent= () =>{
 
 

@@ -1,5 +1,5 @@
-import ListEmployeeComponent from "../../../ems-frontend/src/components/ListEmployeeComponent"
-import '../../ems-frontend/src/app.css'
+import './App.css'
+import ListEmployeeComponent from './component/ListEmployeeComponent'
 
 function App(){
   return(
@@ -8,7 +8,7 @@ function App(){
     </div>
   )
 }
-export default App
+export default App 
 
 
 
