@@ -53,7 +53,7 @@ const EmployeeComponent = () => {
                                 <input type='text' placeholder='please Enter Email' name='email' value={email} className='form-control' onChange={handleEmail}></input>
                             </div>
 
-                            <button type="button" className="btn btn-success" onClick={saveEmployee}>Success</button>
+                            <button type="button" className="btn btn-success" onClick={saveEmployee}>Submit</button>
                         </form>
                     </div>
 
