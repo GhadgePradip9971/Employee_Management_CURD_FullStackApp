@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
+import { createEmployee } from '../services/EmployeeService'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const EmployeeComponent = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
+
+    const navigater=useNavigate();
+
 
     function handleFirstName(e) {
         setFirstName(e.target.value);
@@ -18,6 +23,11 @@ const EmployeeComponent = () => {
         e.preventDefault();
         const employee = { firstName, lastName, email }
         console.log(employee)
+        createEmployee(employee).then((response)=>{
+            console.log(response.data)
+            navigater('/employees')
+
+        })
     }
 
     return (
@@ -43,7 +53,7 @@ const EmployeeComponent = () => {
                                 <input type='text' placeholder='please Enter Email' name='email' value={email} className='form-control' onChange={handleEmail}></input>
                             </div>
 
-                            <button type="button" className="btn btn-success" onClick={saveEmployee}>Success</button>
+                            <button type="button" className="btn btn-success" onClick={saveEmployee}>Submit</button>
                         </form>
                     </div>
 
